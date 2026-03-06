@@ -3,5 +3,3 @@ uvicorn
 requests
 groq
 python-dotenv
-sentence-transformers
-scikit-learn
