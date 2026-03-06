@@ -1,15 +1,29 @@
 from groq import Groq
 from app.core.config import GROQ_API_KEY
 from app.services.news_service import fetch_news, detect_category
-from app.services.semantic_router import detect_domain_semantic
 
 client = Groq(api_key=GROQ_API_KEY)
 
+def detect_category(prompt: str):
+    prompt = prompt.lower()
+
+    if "ai" in prompt or "tech" in prompt or "technology" in prompt:
+        return "technology"
+    elif "finance" in prompt or "business" in prompt or "stock" in prompt:
+        return "business"
+    elif "sports" in prompt or "cricket" in prompt or "football" in prompt:
+        return "sports"
+    elif "crypto" in prompt or "bitcoin" in prompt:
+        return "cryptocurrency"
+    elif "health" in prompt or "medicine" in prompt:
+        return "health"
+    else:
+        return prompt
 
 def ask_llm(prompt: str):
 
     # Detect category
-    category = detect_domain_semantic(prompt)
+    category = detect_category(prompt)
 
     # Fetch news
     news_data = fetch_news(category)
