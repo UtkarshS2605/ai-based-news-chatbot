@@ -13,7 +13,7 @@ function NewsCard({ article }) {
     try {
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/summarize",
+        "https://ai-based-news-chatbot-1.onrender.com/summarize",
         {
           text: `
           Title: ${article.title}
