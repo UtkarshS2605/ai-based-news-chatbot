@@ -7,25 +7,27 @@ An AI-powered full-stack news chatbot built using **React, FastAPI, OpenAI, and 
 # 🌐 Live Demo
 
 ## 🚀 Frontend
+
 https://ai-based-news-chatbot.vercel.app
 
-## ⚙️ Backend API
+## ⚙️ Backend API Docs
+
 https://ai-based-news-chatbot-1.onrender.com/docs
 
 ---
 
 # ✨ Features
 
-- 📰 Real-time News Fetching
-- 🤖 AI-Powered News Summaries
-- 🔍 Search News by Topic
-- 📂 News Categories
-- ⚡ FastAPI REST API Backend
-- 🎨 Modern React Frontend
-- ☁️ Fully Deployed Application
-- 📱 Responsive UI Design
-- 🧠 OpenAI Integration
-- 🌐 NewsAPI Integration
+* 📰 Real-time News Fetching
+* 🤖 AI-Powered News Summaries
+* 🔍 Search News by Topic
+* 📂 News Categories
+* ⚡ FastAPI REST API Backend
+* 🎨 Modern React Frontend
+* ☁️ Fully Deployed Application
+* 📱 Responsive UI Design
+* 🧠 OpenAI Integration
+* 🌐 NewsAPI Integration
 
 ---
 
@@ -46,23 +48,27 @@ https://ai-based-news-chatbot-1.onrender.com/docs
 # 🛠️ Tech Stack
 
 ## Frontend
-- React.js
-- Vite
-- Tailwind CSS
-- Axios
+
+* React.js
+* Vite
+* Tailwind CSS
+* Axios
 
 ## Backend
-- FastAPI
-- Python
-- Uvicorn
+
+* FastAPI
+* Python
+* Uvicorn
 
 ## APIs & AI
-- OpenAI API
-- NewsAPI
+
+* OpenAI API
+* NewsAPI
 
 ## Deployment
-- Vercel
-- Render
+
+* Vercel
+* Render
 
 ---
 
@@ -89,6 +95,9 @@ ai-based-news-chatbot/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
+
+---
 
 # ⚙️ Installation & Setup
 
@@ -198,3 +207,15 @@ http://localhost:5173
 ### 📌 Connect With Me
 
 * GitHub: https://github.com/UtkarshS2605
+
+---
+
+# ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
