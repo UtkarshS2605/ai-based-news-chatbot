@@ -22,7 +22,7 @@ function App() {
     try {
 
       const response = await axios.get(
-        `http://127.0.0.1:8000/news?topic=${searchTopic}`
+        `https://ai-based-news-chatbot-1.onrender.com/news?topic=${searchTopic}`
       )
 
       setArticles(response.data)
