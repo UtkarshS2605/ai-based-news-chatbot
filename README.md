@@ -1,29 +1,45 @@
 # 🧠 AI News Chatbot
 
-An AI-powered full-stack news chatbot built using **React, FastAPI, OpenAI, and NewsAPI** that fetches real-time news articles and generates AI summaries.
+An AI-powered full-stack news chatbot built using **React, FastAPI, OpenAI, and NewsAPI** that fetches real-time news and generates intelligent AI summaries.
 
 ---
 
-## 🌐 Live Demo
+# 🌐 Live Demo
 
-### 🚀 Frontend
+## 🚀 Frontend
 https://ai-based-news-chatbot.vercel.app
 
-### ⚙️ Backend API Docs
+## ⚙️ Backend API
 https://ai-based-news-chatbot-1.onrender.com/docs
 
 ---
 
 # ✨ Features
 
-- 📰 Live News Fetching
+- 📰 Real-time News Fetching
 - 🤖 AI-Powered News Summaries
-- 🔍 News Search Functionality
-- 🧠 AI Chat Assistant
+- 🔍 Search News by Topic
 - 📂 News Categories
-- ⚡ FastAPI Backend
+- ⚡ FastAPI REST API Backend
 - 🎨 Modern React Frontend
-- ☁️ Fully Deployed on Vercel & Render
+- ☁️ Fully Deployed Application
+- 📱 Responsive UI Design
+- 🧠 OpenAI Integration
+- 🌐 NewsAPI Integration
+
+---
+
+# 📸 Screenshots
+
+## 🏠 Homepage
+
+![Homepage](screenshots/home.png)
+
+---
+
+## 🤖 AI Summary Feature
+
+![AI Summary](screenshots/summary.png)
 
 ---
 
@@ -50,27 +66,7 @@ https://ai-based-news-chatbot-1.onrender.com/docs
 
 ---
 
-# 📸 Screenshots
-
-## 🏠 Homepage
-
-![Homepage](screenshots/home.png)
-
----
-
-## 🤖 AI Summary Feature
-
-![AI Summary](screenshots/summary.png)
-
----
-
-## 🔍 Search Functionality
-
-![Search](screenshots/search.png)
-
----
-
-# 📁 Project Structure
+# 📂 Project Structure
 
 ```bash
 ai-based-news-chatbot/
@@ -85,6 +81,10 @@ ai-based-news-chatbot/
 │   ├── src/
 │   ├── public/
 │   └── package.json
+│
+├── screenshots/
+│   ├── home.png
+│   └── summary.png
 │
 ├── requirements.txt
 ├── README.md
