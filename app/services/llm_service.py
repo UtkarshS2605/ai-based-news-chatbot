@@ -1,50 +1,39 @@
-from groq import Groq
-from app.core.config import GROQ_API_KEY
-from app.services.news_service import fetch_news, detect_category
+from openai import OpenAI
 
-client = Groq(api_key=GROQ_API_KEY)
+from app.core.config import OPENAI_API_KEY
 
-def detect_category(prompt: str):
-    prompt = prompt.lower()
+client = OpenAI(api_key=OPENAI_API_KEY)
 
-    if "ai" in prompt or "tech" in prompt or "technology" in prompt:
-        return "technology"
-    elif "finance" in prompt or "business" in prompt or "stock" in prompt:
-        return "business"
-    elif "sports" in prompt or "cricket" in prompt or "football" in prompt:
-        return "sports"
-    elif "crypto" in prompt or "bitcoin" in prompt:
-        return "cryptocurrency"
-    elif "health" in prompt or "medicine" in prompt:
-        return "health"
-    else:
-        return prompt
 
-def ask_llm(prompt: str):
+def summarize_text(text):
 
-    # Detect category
-    category = detect_category(prompt)
+    try:
 
-    # Fetch news
-    news_data = fetch_news(category)
+        response = client.chat.completions.create(
 
-    final_prompt = f"""
-You are an AI news assistant.
+            model="gpt-4.1-mini",
 
-User query:
-{prompt}
+            messages=[
 
-Latest news:
-{news_data}
+                {
+                    "role": "system",
+                    "content": "You are a helpful news summarizer."
+                },
 
-Summarize the important updates clearly.
-"""
+                {
+                    "role": "user",
+                    "content": f"Summarize this news article simply:\n\n{text}"
+                }
 
-    completion = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
-        messages=[
-            {"role": "user", "content": final_prompt}
-        ]
-    )
+            ],
 
-    return completion.choices[0].message.content
+            temperature=0.5,
+            max_tokens=200
+
+        )
+
+        return response.choices[0].message.content
+
+    except Exception as e:
+
+        return str(e)

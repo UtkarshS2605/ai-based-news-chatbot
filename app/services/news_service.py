@@ -1,64 +1,44 @@
 import requests
+
 from app.core.config import NEWS_API_KEY
 
-def detect_category(prompt: str):
-    prompt = prompt.lower()
 
-    domains = {
-        "ai": "artificial intelligence",
-        "tech": "technology",
-        "technology": "technology",
-        "startup": "startups",
-        "business": "business",
-        "finance": "finance",
-        "crypto": "cryptocurrency",
-        "sports": "sports",
-        "health": "health",
-        "politics": "politics",
-        "science": "science",
-        "climate": "climate"
-    }
+def fetch_news(topic="technology"):
 
-    for key, value in domains.items():
-        if key in prompt:
-            return value
+    url = (
+        f"https://newsapi.org/v2/top-headlines?"
+        f"category={topic}&"
+        f"country=us&"
+        f"pageSize=12&"
+        f"apiKey={NEWS_API_KEY}"
+    )
 
-    return prompt
+    response = requests.get(url)
 
+    data = response.json()
 
-# Fetch latest news
-def fetch_news(query: str):
-    url = "https://newsapi.org/v2/everything"
+    articles = []
 
-    params = {
-        "q": query,
-        "language": "en",
-        "sortBy": "publishedAt",
-        "pageSize": 5,
-        "apiKey": NEWS_API_KEY
-    }
+    for article in data.get("articles", []):
 
-    try:
-        response = requests.get(url, params=params)
-        data = response.json()
+        if not article.get("title"):
+            continue
 
-        articles = data.get("articles", [])
+        if not article.get("urlToImage"):
+            continue
 
-        if not articles:
-            return "No recent news found."
+        articles.append({
 
-        news_text = ""
+            "title": article.get("title"),
 
-        for i, article in enumerate(articles, 1):
-            title = article.get("title", "No title available")
-            description = article.get("description", "No description available.")
-            url = article.get("url", "")
+            "description": article.get("description"),
 
-            news_text += f"{i}. {title}\n"
-            news_text += f"{description}\n"
-            news_text += f"{url}\n\n"
+            "source": article.get("source", {}).get("name"),
 
-        return news_text
+            "url": article.get("url"),
 
-    except Exception as e:
-        return f"Error fetching news: {str(e)}"
+            "image": article.get("urlToImage")
+
+        })
+
+    return articles

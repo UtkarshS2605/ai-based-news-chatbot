@@ -1,20 +1,25 @@
-from fastapi import APIRouter, Query
-from app.services.llm_service import ask_llm
-from fastapi import Form
-from fastapi.responses import PlainTextResponse
+from fastapi import APIRouter
+from app.services.news_service import fetch_news
+from app.services.llm_service import summarize_text
 
 router = APIRouter()
 
-@router.post("/chat")
-def chat(prompt: str = Query(...)):
-    try:
-        response = ask_llm(prompt)
-        return {"response": response}
-    except Exception as e:
-        print("ERROR:", e)
-        return {"error": str(e)}
-    
-@router.post("/webhook")
-def whatsapp_webhook(Body: str = Form(...)):
-    response = ask_llm(Body)
-    return PlainTextResponse(response)
+@router.get("/")
+def root():
+    return {"message": "API Working"}
+
+@router.get("/news")
+def get_news(topic: str = "technology"):
+
+    return fetch_news(topic)
+
+@router.post("/summarize")
+def summarize(data: dict):
+
+    text = data.get("text")
+
+    summary = summarize_text(text)
+
+    return {
+        "summary": summary
+    }
