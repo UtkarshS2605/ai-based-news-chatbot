@@ -89,3 +89,55 @@ ai-based-news-chatbot/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+⚙️ Installation & Setup
+1️⃣ Clone Repository
+git clone https://github.com/UtkarshS2605/ai-based-news-chatbot.git
+2️⃣ Backend Setup
+cd ai-based-news-chatbot
+
+Create virtual environment:
+
+python -m venv .venv
+
+Activate virtual environment:
+
+Windows
+.venv\Scripts\activate
+
+Install dependencies:
+
+pip install -r requirements.txt
+3️⃣ Create .env File
+NEWS_API_KEY=your_newsapi_key
+OPENAI_API_KEY=your_openai_key
+4️⃣ Run Backend
+uvicorn app.main:app --reload
+
+Backend runs on:
+
+http://127.0.0.1:8000
+5️⃣ Frontend Setup
+cd frontend
+npm install
+npm run dev
+
+Frontend runs on:
+
+http://localhost:5173
+🚀 Deployment
+Frontend Deployment
+Vercel
+Backend Deployment
+Render
+🔮 Future Improvements
+👤 User Authentication
+🌙 Dark Mode
+🎤 Voice Assistant
+🔖 Bookmark News
+🌍 Multi-language Support
+📈 Trending News Analytics
+🧠 Personalized AI Recommendations
+👨‍💻 Author
+Utkarsh Sawant
+📌 Connect With Me
+GitHub: https://github.com/UtkarshS2605
