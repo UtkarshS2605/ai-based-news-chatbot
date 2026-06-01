@@ -5,16 +5,16 @@ from app.api.routes import router
 
 app = FastAPI()
 
+# CORS
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://ai-based-news-chatbot.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 app.include_router(router)
-
-@app.get("/")
-def home():
-    return {"message": "AI News Chatbot Running"}
