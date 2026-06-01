@@ -89,55 +89,111 @@ ai-based-news-chatbot/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-⚙️ Installation & Setup
-1️⃣ Clone Repository
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/UtkarshS2605/ai-based-news-chatbot.git
-2️⃣ Backend Setup
+```
+
+---
+
+## 2️⃣ Backend Setup
+
+```bash
 cd ai-based-news-chatbot
+```
 
-Create virtual environment:
+### Create Virtual Environment
 
+```bash
 python -m venv .venv
+```
 
-Activate virtual environment:
+### Activate Virtual Environment
 
-Windows
+#### Windows
+
+```bash
 .venv\Scripts\activate
+```
 
-Install dependencies:
+### Install Dependencies
 
+```bash
 pip install -r requirements.txt
-3️⃣ Create .env File
+```
+
+---
+
+## 3️⃣ Create `.env` File
+
+```env
 NEWS_API_KEY=your_newsapi_key
 OPENAI_API_KEY=your_openai_key
-4️⃣ Run Backend
+```
+
+---
+
+## 4️⃣ Run Backend
+
+```bash
 uvicorn app.main:app --reload
+```
 
 Backend runs on:
 
+```bash
 http://127.0.0.1:8000
-5️⃣ Frontend Setup
+```
+
+---
+
+## 5️⃣ Frontend Setup
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 Frontend runs on:
 
+```bash
 http://localhost:5173
-🚀 Deployment
-Frontend Deployment
-Vercel
-Backend Deployment
-Render
-🔮 Future Improvements
-👤 User Authentication
-🌙 Dark Mode
-🎤 Voice Assistant
-🔖 Bookmark News
-🌍 Multi-language Support
-📈 Trending News Analytics
-🧠 Personalized AI Recommendations
-👨‍💻 Author
-Utkarsh Sawant
-📌 Connect With Me
-GitHub: https://github.com/UtkarshS2605
+```
+
+---
+
+# 🚀 Deployment
+
+## Frontend Deployment
+
+* Vercel
+
+## Backend Deployment
+
+* Render
+
+---
+
+# 🔮 Future Improvements
+
+* 👤 User Authentication
+* 🌙 Dark Mode
+* 🎤 Voice Assistant
+* 🔖 Bookmark News
+* 🌍 Multi-language Support
+* 📈 Trending News Analytics
+* 🧠 Personalized AI Recommendations
+
+---
+
+# 👨‍💻 Author
+
+## Utkarsh Sawant
+
+### 📌 Connect With Me
+
+* GitHub: https://github.com/UtkarshS2605
